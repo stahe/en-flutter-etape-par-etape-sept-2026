@@ -1,0 +1,971 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Step-by-Step Introduction to the [Flutter] Mobile Framework">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-flutter-etape-par-etape-sept-2026/introduction.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="setting-up-the-work-environment.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>1. Introduction - Step-by-Step Introduction to the [Flutter] Mobile Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Step-by-Step Introduction to the [Flutter] Mobile Framework";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Step-by-Step Introduction to the [Flutter] Mobile Framework" class="md-header__button md-logo" aria-label="Step-by-Step Introduction to the [Flutter] Mobile Framework" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Step-by-Step Introduction to the [Flutter] Mobile Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-flutter-etape-par-etape-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Step-by-Step Introduction to the [Flutter] Mobile Framework" class="md-nav__button md-logo" aria-label="Step-by-Step Introduction to the [Flutter] Mobile Framework" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Step-by-Step Introduction to the [Flutter] Mobile Framework
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-flutter-etape-par-etape-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="introduction.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-the-role-of-flutter-in-a-clientserver-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. The Role of Flutter in a Client/Server Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-tools-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Tools Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-the-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. The Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-document-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Document Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setting-up-the-work-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Setting Up the Work Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started-with-flutter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Getting Started with Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="widgets.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="routing.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="asynchronous-processing-and-shared-state.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Asynchronous Processing and Shared State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internationalization.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Internationalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-rdvmedecins-server-a-black-box.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. The RdvMedecins server, a black box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="communicating-with-the-server.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Communicating with the server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="interim-conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Interim Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="case-study-the-flutter-client-for-the-rdvmedecins-application.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Case Study: The Flutter client for the RdvMedecins application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appendices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Appendices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-introduction">1. <span style="color: #2e74b5">Introduction</span></h1>
+<p>The document’s PDF is <a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQDvXwbsiK7FQYg8huuFGETnARVh8HBNSZ0r__f_jilaACI?e=G8or1T"><u><span style="color: #0563c1">HERE</span></u></a>.</p>
+<p>The document’s codes are <a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQADey5C2YXHSact4epdYmlXAbeqM2IqZ4uQ2kWunPNbPXU?e=46ZrIJ"><u><span style="color: #0563c1">HERE</span></u></a>.</p>
+<p>This document is a product of Anthropic’s IA Claude. It follows the course <a href="https://stahe.github.io/en-react-etape-par-etape-sept-2026/"><u><span style="color: #0563c1">“Step-by-Step Introduction to the React Web Framework</span></u></a>,” from which it borrows the outline, examples, and case study, while changing the target:</p>
+<ul>
+<li>In the courses <em>[React]</em>, <em>[Vue.js]</em>, and <em>[Angular]</em>, the application runs in a browser; it is built using HTML, CSS, and <em>[JavaScript]</em>;</li>
+<li>In this course, the application is a <strong>mobile</strong> app, written using the <em>[Flutter]</em> framework and the <em>[Dart]</em> language, which runs on a <em>[Android]</em> phone. The same code, without any changes, also generates a web application (and a <em>[Windows]</em>, <em>[macOS],</em> or <em>[Linux]</em> application).</li>
+</ul>
+<p>The server, however, remains the same: it is the JSON <em>[RdvMedecins]</em> server from previous lessons, written using <em>[NestJS]</em>. And the application screens are the ones that readers of the other lessons are already familiar with (login with CAPTCHA, doctor’s schedule, appointment window, patient portal, doctor and client management, account creation, French and English), adapted for a phone screen.</p>
+<p>The document follows the same structure as its predecessors: first, numerous short examples, each focusing on a concept from <em>[Flutter]</em>, followed by a complete case study—the <em>[Flutter]</em> client for the <em>[RdvMedecins]</em> application—with all files fully commented. The 25 examples have the same numbers as those in the <em>[React]</em> course: Readers familiar with <em>[React]</em>, <em>[Vue.js],</em> or <em>[Angular]</em> will find the same examples, written in the style of <em>[Flutter]</em>.</p>
+<p>A course on this topic already exists: <a href="https://stahe.github.io/en-flutter-nestjs-sept-2026/"><u><span style="color: #0563c1">An Example of a Flutter Client/Server / NestJS (2026)</span></u></a>, which presents a complete client right from the start. This document differs in its approach: we learn <em>[Flutter]</em> step by step, through small examples, before tackling the complete client; and the server is treated as a black box, of which only the API and JSON are of interest to us.</p>
+<p>A basic understanding of the <em>[Dart]</em> language is assumed: these fundamentals are covered in the course <a href="https://stahe.github.io/en-dart-sept-2026/"><u><span style="color: #0563c1">“Introduction to the Dart Language Through Examples” (2026)</span></u></a>. However, language features specific to <em>[Flutter]</em> (named parameters, classes, <strong><em>[async]</em></strong> / <strong><em>[await]</em></strong>, collections, etc.) are reviewed throughout the examples as they are used.</p>
+<h2 id="11-the-role-of-flutter-in-a-clientserver-application">1.1. <span style="color: #2e74b5">The Role of Flutter in a Client/Server Application</span></h2>
+<p>The application has two parts, which communicate with each other only through HTTP requests:</p>
+<p><img src="images/1000000000000AF40000032CDB49CCB9.png" width="605" height="175" style="width:16cm;height:4.634cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000AF40000032CDB49CCB9.png" /></p>
+<ul>
+<li>1: The <em>[Flutter]</em> application, running on the phone, sends a HTTP request to the server, for example, <strong><em>[GET /api/agenda?idMedecin=1&amp;jour=2026-10-05]</em></strong>;</li>
+<li>2: The server responds with data JSON: this doctor’s schedule for that day. It does not generate any pages;</li>
+<li>3: Using this data, <em>[Flutter]</em> updates the phone’s screen.</li>
+</ul>
+<p>This is exactly the architecture of the clients <em>[React]</em>, <em>[Vue.js],</em> and <em>[Angular]</em>: the only difference is what generates the display. Whereas a browser builds a page from HTML and CSS, <em>[Flutter]</em> <strong>draws</strong> every pixel on the screen itself, using its own graphics engine. It does not use the system’s components (the buttons from <em>[Android]</em> or <em>[iOS]</em>): it mimics them or provides its own. This is what allows it to display the same application, down to the pixel, on a <em>[Android]</em> phone, a <em>[iPhone]</em>, in a browser, or on a computer.</p>
+<p><em>[Flutter]</em> is a framework created by <em>[Google]</em> and released in 2018. It is currently the most widely used framework for writing mobile apps for <em>[Android]</em> and <em>[iOS]</em> using a single codebase. It is based on three core concepts:</p>
+<ul>
+<li><strong>everything is a widget</strong>: the screen is described by a tree of widgets, objects that each represent a part of the interface—such as text, a button, a margin, a column, or an entire screen. You create your own widgets by assembling those provided by <em>[Flutter]</em>;</li>
+<li><strong>the interface is a function of state</strong>: a widget has a method <strong><em>[build()]</em></strong> that describes what to display based on its data. When the data changes (<strong><em>[setState()]</em></strong>), <em>[Flutter]</em> calls <strong><em>[build()]</em></strong>, compares the new tree to the old one, and redraws what has changed. We never write code that modifies the screen: we describe the screen based on its state. Readers of the <em>[React]</em> course will recognize this principle: it is the same as that of components and <strong><em>[useState]</em></strong>;</li>
+<li><strong>a language,</strong> <em>[Dart]</em>, compiled into machine code for the phone (resulting in fast applications), or into <em>[JavaScript]</em> or <em>[WebAssembly]</em> for the browser. During development, <em>[Dart]</em> enables <strong>hot reloading</strong>: a code change is applied to the running application in one second, without losing its state.</li>
+</ul>
+<p>Like <em>[React]</em>, <em>[Flutter]</em> is not an “all-in-one” framework for communicating with a server: the HTTP client, the router, shared state, and translations are provided by <strong>packages</strong> (libraries) published on the <a href="https://pub.dev/"><u><span style="color: #0563c1">pub.dev</span></u></a> website. This course uses the packages recommended in the <em>[Flutter]</em> documentation and maintained, for the most part, by the <em>[Flutter]</em> team itself: <em>[http]</em> (HTTP requests), <em>[go_router]</em> (the router), <em>[provider]</em> (shared state), <em>[shared_preferences]</em> (on-device storage), <em>[intl]</em> (dates and numbers in each language), <em>[flutter_svg]</em> (images SVG).</p>
+<h2 id="12-tools-used">1.2. <span style="color: #2e74b5">Tools Used</span></h2>
+<p>The examples were written and tested using the following tools (their installation is described in the appendix):</p>
+<ul>
+<li>SDK <em>[Flutter]</em> 3.44, which includes SDK <em>[Dart]</em> 3.12;</li>
+<li>the <em>[Visual Studio Code]</em> editor and its extension <em>[Flutter]</em> (which also installs the <em>[Dart]</em> extension);</li>
+<li><em>[Android Studio]</em>, only for its emulator manager, and SDK <em>[Android]</em>: an <strong>emulator</strong> <em>[Android]</em> (a simulated phone on the computer), or a real phone <em>[Android]</em> connected to the computer;</li>
+<li>the <em>[Chrome]</em> browser, for the web version of the applications;</li>
+<li>the SGBD <em>[MySQL]</em> (or <em>[MariaDB]</em>), for example, the one for <em>[Laragon]</em> under <em>[Windows]</em> and <em>[Node.js]</em>: these are required by the JSON server, as described in the chapter introducing it;</li>
+<li>the command-line tool <em>[curl]</em>, which displays the raw HTTP responses.</li>
+</ul>
+<p>The packages used are those from the <em>[pubspec.yaml]</em> files: <em>[go_router]</em> 16, <em>[provider]</em> 6, <em>[http]</em> 1.5, <em>[shared_preferences]</em> 2.5, <em>[flutter_svg]</em> 2, <em>[intl]</em>, and the packages <em>[flutter_localizations]</em> and <em>[flutter_test]</em> included with <em>[Flutter]</em>.</p>
+<h2 id="13-screenshots">1.3. <span style="color: #2e74b5">Screenshots</span></h2>
+<p>The screenshots in this document were generated automatically by <em>[Flutter]</em> <strong>tests</strong> (<em>[test/captures]</em> project folders): Each test launches an example, interacts with it as a user would (entering text, tapping buttons), and then instructs the <em>[Flutter]</em> engine to render the screen as an image file at the resolution of a <em>[Android]</em> phone (1080 x 2340 pixels). These are therefore actual screens from the app, rendered by the same engine as on the phone; the only elements missing are the phone’s status bar (time, battery) and the on-screen keyboard. The chapter on the first example shows the same app running on a <em>[Android]</em> emulator.</p>
+<h2 id="14-the-examples">1.4. <span style="color: #2e74b5">The Examples</span></h2>
+<p>The code in this document is organized into three folders:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>flutter-etape-par-etape-sept-2026/
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── exemples_flutter/          les 25 petits exemples de Flutter (un seul projet)
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>├── rdvmedecins-nestjs-json/   le serveur JSON RdvMedecins (la « boîte noire »)
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>└── rdvmedecins_flutter/       le client Flutter de l'étude de cas
+</code></pre></div></td></tr></table></div>
+<p>The examples make up a single project, <em>[Flutter]</em>, with each example located in a folder within <em>[lib/]</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">exemples_flutter</span><span class="o">/</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="err">├── android/                    le projet Android (généré par Flutter)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="err">├── web/                        le projet web (généré par Flutter)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="err">├── windows/                    le projet Windows (généré par Flutter)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="err">├── assets/                     les fichiers livrés avec l'application (images, dictionnaires)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="err">├── lib/</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="err">│   ├── main.dart               le point d'entrée par défaut (il lance l'exemple 01)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="err">│   ├── ex01_premiere_application/</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="err">│   │   └── main.dart           le point d'entrée de l'exemple 01</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="err">│   ├── ex02_etat/</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="err">│   ├── ...</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="err">│   ├── ex25_erreurs_serveur/</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="err">│   └── commun/                 du code partagé par les exemples 22 à 25</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="err">├── test/                       les tests (et la fabrication des copies d'écran)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="err">├── analysis_options.yaml       les règles de l'analyseur de code</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="err">├── pubspec.yaml                la description du projet et de ses paquets</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="err">└── web_dev_config.yaml         le serveur de développement web (exemples 22 à 25)</span>
+</code></pre></div></td></tr></table></div>
+<p>The platform-specific folders (<em>[android/]</em>, <em>[web/]</em>, <em>[windows/]</em>) are not provided in their entirety: these are small projects—<em>[Android]</em> (web) and <em>[Windows]</em>—that <em>[Flutter]</em> can generate, and which depend on the version of <em>[Flutter]</em> installed. You build them once, then download the packages in a console opened to the <em>[exemples_flutter]</em> folder (in <em>[VS Code]</em>: Terminal menu / New Terminal):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>flutter create --platforms=android,web,windows --org fr.stahe --project-name exemples_flutter .
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>flutter pub get
+</code></pre></div></td></tr></table></div>
+<p><em>[flutter create .]</em> (the period indicates the current folder) completes the project without modifying existing files: the provided <em>[android/app/src/main/AndroidManifest.xml]</em> file (see Example 22) is preserved. If you skip this step, <em>[flutter run]</em> fails on a phone with a misleading message: “Build failed due to use of deleted Android v1 embedding” (<em>[Flutter]</em> cannot find the <em>[Android]</em> project and assumes it is very old).</p>
+<p>Then run an example by specifying the <em>[main.dart]</em> file with the <em>[-t]</em> option (for “target”):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>flutter run -t lib/ex01_premiere_application/main.dart
+</code></pre></div></td></tr></table></div>
+<p><em>[flutter run]</em> asks which device to run the application on if it finds multiple devices (an emulator <em>[Android]</em>, <em>[Chrome]</em>, <em>[Windows]</em>...). You can specify this using the <em>[-d]</em> option (for “device”):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>flutter run -d emulator-5554 -t lib/ex01_premiere_application/main.dart
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>flutter run -d chrome -t lib/ex01_premiere_application/main.dart
+</code></pre></div></td></tr></table></div>
+<p>While the application is running, the console accepts a few single-letter commands: <strong>r</strong> (hot reload: code changes are applied, and the state is preserved), <strong>R</strong> (hot restart: the application restarts from scratch), <strong>q</strong> (stop). In <em>[VS Code]</em>, you can also open the example file <em>[main.dart]</em> and press F5; the device is then selected in the status bar at the bottom right of the window.</p>
+<p>Examples 22 through 25 query the JSON and <em>[RdvMedecins]</em> servers: you will need to have them installed and running, as explained in the chapter dedicated to them.</p>
+<h2 id="15-document-contents">1.5. <span style="color: #2e74b5">Document Contents</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Chapter</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Contents</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Examples</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Getting Started</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">A Flutter Project, Widgets, State (setState), Events, Input Fields, A Reducer, Validation, Form and FormField, Formatting (intl)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">01 to 09</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Widgets</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">parameters, functions as parameters, composition (child, builders), lifecycle, inherited data (InheritedWidget), reusable behaviors (mixins, animations), confirmation dialog</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">10 to 16</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Routing</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">go_router: routes, parameters, shell, redirects, guards</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">17 and 18</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Asynchronous Processing and Shared State</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Future, Stream, timers, anti-rebound, expired responses, FutureBuilder, StreamBuilder, provider, shared_preferences</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">19 and 20</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Internationalization</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">An Application in French and English</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">21</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The server, a black box</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Installation of the JSON server, its API, curl examples</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Communicating with the server</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The HTTP packet, the server address, the token cookie, an access layer to the API, a view template, server errors</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">22–25</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Case Study</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The Flutter client for the RdvMedecins application</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Deployment</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The compiled web client, served by the JSON server; the Android app</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">-</div></td></tr></table>
+
+<p>Each example is presented with its complete code, commented line by line, and screenshots of its execution. The code itself is extensively commented: these comments are part of the course.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        This tutorial, written by Anthropic's AI <strong>Claude</strong> at the request of <strong>Serge Tahé</strong>, is made available to the public under the terms of the
+        <em>Creative Commons Attribution – No Commercial Use –
+        ShareAlike 3.0 Unported</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
