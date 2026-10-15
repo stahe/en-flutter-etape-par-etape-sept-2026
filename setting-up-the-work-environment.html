@@ -797,7 +797,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p><strong>Visual Studio Code</strong> (VSCode): available for free download at <a href="https://code.visualstudio.com/"><u><span style="color: #0563c1">code.visualstudio.com</span></u></a>. Install the “TypeScript and JavaScript Language Features” extension (usually already included).</p>
+<p><strong>Visual Studio Code</strong> (VSCode): available for free download at <a href="https://code.visualstudio.com/"><u><span style="color: #0563c1">code.visualstudio.com</span></u></a>. Install the [Flutter] extension (which also installs the [Dart] extension).</p>
 </li>
 <li>
 <p><strong>[MySQL] 8</strong>: Install, for example, via <a href="https://www.apachefriends.org/"><u><span style="color: #0563c1">XAMPP</span></u></a>, <a href="https://laragon.org/"><u><span style="color: #0563c1">Laragon</span></u></a> (on Windows), or directly via <a href="https://dev.mysql.com/downloads/mysql/"><u><span style="color: #0563c1">[MySQL] Community Server</span></u></a>. A graphical administration tool (phpMyAdmin, <em><mark style="background-color: #fff5ce">[MySQL] </mark></em>Workbench, DBeaver, HeidiSQL…) simplifies the process. Subsequently, the Laragon tool is used.</p>
@@ -827,13 +827,13 @@
 </ul>
 <p><img src="images/10000000000004BE000001EA71832475.png" width="602" height="243" style="width:15.921cm;height:6.426cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004BE000001EA71832475.png" /></p>
 <ul>
-<li>In [1-3], specify the project targets in [1 – application Android, 2- application de bureau 3 – application web];</li>
+<li>In [1-3], specify the project targets in [1 – Android application, 2 – desktop application, 3 – web application];</li>
 </ul>
 <p><img src="images/10000000000001A600000359CB73D876.png" width="190" height="384" style="width:5.02cm;height:10.16cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A600000359CB73D876.png" /></p>
 <ul>
-<li>to [4], the created project. VSCode automatically downloads SDK from Flutter;</li>
+<li>to [4], the created project. VSCode automatically downloads the Flutter SDK;</li>
 </ul>
-<p>The <strong><em>[flutter doctor]</em></strong> command verifies that everything <em>[Flutter]</em> needs is in place, target by target. Run VSCode in a terminal for the newly created Flutter project:</p>
+<p>The <strong><em>[flutter doctor]</em></strong> command verifies that everything <em>[Flutter]</em> needs is in place, target by target. Run it in a VSCode terminal of the newly created Flutter project:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>flutter doctor
 </code></pre></div>
 <p>When everything is correct, you’ll get a result like this (version numbers may vary):</p>
@@ -944,34 +944,38 @@
 <a id="__codelineno-3-41" name="__codelineno-3-41"></a>• No issues found!
 </code></pre></div></td></tr></table></div>
 <p>Now list the applications (devices) recognized by Flutter:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">PS ...&gt; <span style="background-color:#fff5ce">flutter devices</span>                 </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Found 4 connected devices:</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">sdk gphone16k x86 64 (mobile) • <span style="background-color:#fff5ce">emulator-5554</span> • android-x64    • Android 17 (API 37) (emulator)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Windows (desktop)             • <span style="background-color:#fff5ce">windows</span>       • windows-x64    • Microsoft Windows [version</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">10.0.26200.9457]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Chrome (web)                  • <span style="background-color:#fff5ce">chrome</span>        • web-javascript • Google Chrome 153.0.8010.48</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Edge (web)                    • <span style="background-color:#fff5ce">edge</span>          • web-javascript • Microsoft Edge 153.0.4234.48</span></span>
-</code></pre></div>
-
-<p>In column 2, you’ll find the IDs of the recognized <em>devices devices</em>. To launch the Flutter app on one of them:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>flutter run -d &lt;device_id&gt;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>PS ...&gt; flutter devices                 
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>Found 4 connected devices:
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>sdk gphone16k x86 64 (mobile) • emulator-5554 • android-x64    • Android 17 (API 37) (emulator)
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>Windows (desktop)             • windows       • windows-x64    • Microsoft Windows [version
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>10.0.26200.9457]
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>Chrome (web)                  • chrome        • web-javascript • Google Chrome 153.0.8010.48
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>Edge (web)                    • edge          • web-javascript • Microsoft Edge 153.0.4234.48
+</code></pre></div></td></tr></table></div>
+<p>In column 2, you’ll find the IDs of the recognized devices. To launch the Flutter app on one of them:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>flutter run -d &lt;device_id&gt;
 </code></pre></div>
 <p>For example, to launch the [flutter_application_1] app in the Edge browser:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>flutter run -d edge
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>flutter run -d edge
 </code></pre></div>
 <p>The following result appears in the Edge browser:</p>
 <p><img src="images/10000000000004B3000003FC206B9EE0.png" width="361" height="306" style="width:9.55cm;height:8.1cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004B3000003FC206B9EE0.png" /></p>
 <p>We will now describe how to install the tools for Android development.</p>
 <p><span id="android-studio-et-les-outils-de-ligne-de-commande-android" name="android-studio-et-les-outils-de-ligne-de-commande-android" class="odt-bookmark-anchor"></span></p>
 <h2 id="23-android-studio-and-android-command-line-tools">2.3. <span style="color: #2e74b5">Android Studio and Android command-line tools</span></h2>
-<p>The target device for this course is a <em>[Android]</em> phone. To compile the application and install it on this phone, <em>[Flutter]</em> requires SDK and <em>[Android]</em>, which are installed along with <em>[Android Studio]</em>, Google&#x27;s development environment. <em>[Android Studio]</em> is not used for writing code—the editor remains <em>[VSCode]</em>—it is used here solely to install and update SDK and <em>[Android]</em>.</p>
+<p>The target device for this course is a <em>[Android]</em> phone. To compile the application and install it on this phone, <em>[Flutter] requires the [Android] SDK</em>, which are installed along with <em>[Android Studio]</em>, Google&#x27;s development environment. <em>[Android Studio]</em> is not used for writing code—the editor remains <em>[VSCode]</em>—it is used here solely to install and update the [Android] SDK.</p>
 <ol>
-<li><strong><em>[Android Studio]</em></strong>: Download it for free from [https://developer.android.com/studio] and then install it. When you launch it for the first time, the wizard will offer a standard installation: accept it, and it will download SDK and <em>[Android]</em>.</li>
+<li><strong><em>[Android Studio]</em></strong>: Download it for free from [https://developer.android.com/studio] and then install it. When you launch it for the first time, the wizard will offer a standard installation: accept it, and it will download the [Android] SDK.</li>
 </ol>
 <p><img src="images/100000000000061F000004EF3DA687E7.png" width="470" height="379" style="width:12.441cm;height:10.021cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000061F000004EF3DA687E7.png" /></p>
 <ol>
-<li>Open <strong><em>[SDK Manager]</em></strong> from <em>[Android Studio]</em> (the <em>[Tools / SDK Manager]</em> menu when a project is open, or <em>[More Actions / SDK Manager]</em> from the home screen): This is the file that installs and updates the components of SDK and <em>[Android]</em>.</li>
+<li>Open <strong><em>[SDK Manager]</em></strong> from <em>[Android Studio]</em> (the <em>[Tools / SDK Manager]</em> menu when a project is open, or <em>[More Actions / SDK Manager]</em> from the home screen): This is the file that installs and updates the components of the [Android] SDK.</li>
 </ol>
 <ol start="2">
   <li><i>[SDK Platforms]</i> tab: Verify that a recent <i>[Android]</i> platform is installed (the <i>[Flutter]</i> documentation specifies version 36 at the time of writing).
@@ -982,18 +986,18 @@
 <ol>
   <li><i>[SDK Tools]</i> tab: Check <i><b>[Android SDK Command-line Tools (latest)]</b></i>, <i>[Android SDK Build-Tools]</i>, and <i>[Android SDK Platform-Tools] </i>(as well as <i>[Android Emulator] </i>if you want to test on an emulator), then click <i>[Apply]</i>. The documentation for <i>[Flutter] </i>also recommends <i>[CMake] </i>and <i>[NDK (Side by side)]</i>. It is the <i>[Android SDK Command-line Tools] packages </i>that are missing when <i>[flutter doctor] </i>displays “cmdline-tools component is missing.”
   </li>
-  <li>Accept the licenses for SDK and <i>[Android] </i>by entering the following command in a terminal within the Flutter project, then answering <i>“[y]” </i>to each question until you see the message “All SDK package licenses accepted.”:
+  <li>Accept the licenses for the [Android] SDK<i> </i>by entering the following command in a terminal within the Flutter project, then answering <i>“[y]” </i>to each question until you see the message “All SDK package licenses accepted.”:
   </li>
 </ol>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>flutter doctor –android-licenses
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>flutter doctor --android-licenses
 </code></pre></div>
-<p><strong><em>[Remarque]</em></strong>: With version 23.0 of <em>[Android SDK Command-line Tools]</em>, the command above may complete immediately, without prompting for anything, displaying “The --licenses option is no longer needed.” This is a known issue in <em>[Flutter]</em> (issues 191558 and 191487 on github.com/flutter/flutter). Workaround: In <em>[SDK Manager]</em>, <em>[SDK Tools]</em> tab, check <em>[Show Package Details]</em>, replace version 23.0 of <em>[Android SDK Command-line Tools]</em> with version 22.0, click on <em>[Apply],</em> and then rerun the command.</p>
+<p><strong><em>[Note]</em></strong>: With version 23.0 of <em>[Android SDK Command-line Tools]</em>, the command above may complete immediately, without prompting for anything, displaying “The --licenses option is no longer needed.” This is a known issue in <em>[Flutter]</em> (issues 191558 and 191487 on github.com/flutter/flutter). Workaround: In <em>[SDK Manager]</em>, <em>[SDK Tools]</em> tab, check <em>[Show Package Details]</em>, replace version 23.0 of <em>[Android SDK Command-line Tools]</em> with version 22.0, click on <em>[Apply],</em> and then rerun the command.</p>
 <p><span id="tester-sur-un-emulateur-android" name="tester-sur-un-emulateur-android" class="odt-bookmark-anchor"></span></p>
 <h2 id="24-set-up-an-android-emulator">2.4. <span style="color: #4f81bd"><span style="color: #2e74b5">Set up</span><span style="color: #2e74b5"> an Android emulator</span></span></h2>
 <p>If you don’t have a phone, you can test the app on a <em>[Android]</em> emulator: a virtual phone that runs in a window on your computer. <em>[Android Studio]</em> installs the <em>[Android Emulator]</em> program (if it was checked in the <em>[SDK Manager]</em>, see above) but does not provide a ready-to-use virtual device: you must create one.</p>
 <ol>
-  <li><i><b>[Prérequis]</b></i>: Virtualization must be enabled in the computer’s <i>[BIOS]</i>, and under <i>[Windows]</i>, the <i>[Plateforme de l&#x27;hyperviseur Windows]</i> feature must be checked (<i>[Panneau de configuration / Programmes / Activer ou désactiver des fonctionnalités Windows]</i>), which requires a restart. Otherwise, the emulator will not start or will remain very slow.
+  <li><i><b>[Prerequisite]</b></i>: Virtualization must be enabled in the computer’s <i>[BIOS]</i>, and under <i>[Windows]</i>, the <i>[Windows Hypervisor Platform]</i> feature must be checked (<i>[Control Panel / Programs / Turn Windows features on or off]</i>), which requires a restart. Otherwise, the emulator will not start or will remain very slow.
   </li>
   <li>Open <i><b>[Device Manager] </b></i>from <i>[Android Studio]</i>: <i>[More Actions / Virtual Device Manager] </i>from the home screen, or <i>[Tools / Device Manager] </i>when a project is open (depending on the version: <i>[View / Tool Windows / Device Manager]</i>).
   </li>
@@ -1019,36 +1023,40 @@
   </li>
 </ol>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>flutter devices
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>flutter devices
 </code></pre></div>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\rdvmedecins_flutter_client&gt; <span style="background-color:#fff5ce">flutter devices</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Found 4 connected devices:</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="background-color:#fff5ce">sdk gphone16k x86 64 (mobile) • emulator-5554 • android-x64    • Android 17 (API 37)</span> (emulator)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  Windows (desktop)             • windows       • windows-x64    • Microsoft Windows [version</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  10.0.26200.9457]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  Chrome (web)                  • chrome        • web-javascript • Google Chrome 153.0.8010.48</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  Edge (web)                    • edge          • web-javascript • Microsoft Edge 153.0.4234.48</span></span>
-</code></pre></div>
-
-<p><strong><em>[Remarque]</em></strong>: if <em>[flutter devices]</em> does not display the emulator but instead shows the message “Device emulator-5554 is offline,” the emulator has not finished starting up, or <em>[adb]</em> (the tool that connects the computer to the device, installed along with <em>[Android SDK Platform-Tools]</em>) is in an inconsistent state. Try the following in order: (1) wait for the welcome screen to appear, then rerun the command; (2) restart <em>[adb]</em> using the following three commands (in <em>[Windows]</em>, within <em>[PowerShell]</em>), with the last one displaying “device” rather than “offline”; (3) In the device’s <em>[Device Manager]</em> menu (<em>[⋮]</em>), select <em>[Cold Boot Now]</em>, or even <em>[Wipe Data]</em> as a last resort.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" kill-server
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" start-server
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" devices
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\rdvmedecins_flutter_client&gt; flutter devices
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>Found 4 connected devices:
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>  sdk gphone16k x86 64 (mobile) • emulator-5554 • android-x64    • Android 17 (API 37) (emulator)
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>  Windows (desktop)             • windows       • windows-x64    • Microsoft Windows [version
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>  10.0.26200.9457]
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>  Chrome (web)                  • chrome        • web-javascript • Google Chrome 153.0.8010.48
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>  Edge (web)                    • edge          • web-javascript • Microsoft Edge 153.0.4234.48
+</code></pre></div></td></tr></table></div>
+<p><strong><em>[Note]</em></strong>: if <em>[flutter devices]</em> does not display the emulator but instead shows the message “Device emulator-5554 is offline,” the emulator has not finished starting up, or <em>[adb]</em> (the tool that connects the computer to the device, installed along with <em>[Android SDK Platform-Tools]</em>) is in an inconsistent state. Try the following in order: (1) wait for the welcome screen to appear, then rerun the command; (2) restart <em>[adb]</em> using the following three commands (in <em>[Windows]</em>, within <em>[PowerShell]</em>), with the last one displaying “device” rather than “offline”; (3) In the device’s <em>[Device Manager]</em> menu (<em>[⋮]</em>), select <em>[Cold Boot Now]</em>, or even <em>[Wipe Data]</em> as a last resort.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" kill-server
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" start-server
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" devices
 </code></pre></div></td></tr></table></div>
 <p>If the problem persists, use <em>[where.exe adb]</em> to verify that no other <em>[adb]</em>, of a different version, is present in the <em>[PATH]</em>: Two versions of <em>[adb]</em> competing for the connection cause this issue.</p>
 <p>Once the emulator is recognized, the application launches on it with the following command (see the <a href="case-study-the-flutter-client-for-the-rdvmedecins-application.html#refheadingtoc614471043670173"><u><span style="color: #0563c1">“Installation and Execution”</span></u></a> section): </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>flutter run -d emulator-5554
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>flutter run -d emulator-5554
 </code></pre></div>
 <p><img src="images/1000000000000326000005D706FD3BC3.png" width="242" height="449" style="width:6.399cm;height:11.869cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000326000005D706FD3BC3.png" /></p>
 <p><span style="color: #2e74b5"><span id="preparer-le-telephone-android" name="preparer-le-telephone-android" class="odt-bookmark-anchor"></span>Preparing the Android phone</span></p>
 <p>To run the application on a real <em>[Android]</em> phone, the phone must be set to allow control from the computer:</p>
 <ol>
-  <li>Enable developer options: open <i>[Paramètres / À propos du téléphone]</i>, then tap <i>[Numéro de build]</i> several times (usually 7) until the phone indicates that you are a developer. The exact labels vary by manufacturer.
+  <li>Enable developer options: open <i>[Settings / About phone]</i>, then tap <i>[Build number]</i> several times (usually 7) until the phone indicates that you are a developer. The exact labels vary by manufacturer.
   </li>
-  <li>Enable <i>[Débogage USB] </i>in the <i>[Options pour les développeurs] </i>menu (added in the previous step).
+  <li>Enable <i>[USB debugging] </i>in the <i>[Developer options] </i>menu (added in the previous step).
   </li>
   <li>Connect the phone to the computer using a USB cable that transfers data (not just charges the phone), and accept the USB debugging authorization request on the phone. On Windows, if the phone is not recognized, install the manufacturer’s driver USB (“OEM USB drivers,” see [https://developer.android.com/studio/run/oem-usb]).
   </li>
@@ -1056,7 +1064,7 @@
   </li>
 </ol>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>flutter devices
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>flutter devices
 </code></pre></div>
 <p>The phone will access the <em>[NestJS]</em> server via the computer’s IP address on the local network (not via <em>[localhost]</em>): this configuration is described in Chapter 5.</p>
 

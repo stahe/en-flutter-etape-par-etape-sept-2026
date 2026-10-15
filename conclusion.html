@@ -705,7 +705,7 @@
 
 <h1 id="13-conclusion">13. <span style="color: #2e74b5">Conclusion</span></h1>
 <p>We have developed the <em>[Flutter]</em> client for the <em>[RdvMedecins]</em> application. For the user, it offers the same screens as the HTML application from the <em>[NestJS]</em> course and as the <em>[Vue.js]</em>, <em>[Angular]</em> and <em>[React]</em> from previous courses; however, this is a <strong>mobile</strong> app installed on the phone, and the same code also generates a web app.</p>
-<p>The server, on the other hand, hasn’t changed. Its API and JSON—whose contract (routes, body, codes, and error keys) was sufficient to write the client without ever reading its code—serves both a browser and a phone equally well. There is only one difference: on the phone, there is no browser to store the token cookie, so the app took on that role with just a few lines of code (<strong><em>[ClientAvecCookies]</em></strong>). Security remains unchanged: it is still the server that authenticates users, verifies roles and management rules, and decides what a patient is authorized to view.</p>
+<p>The server, on the other hand, hasn’t changed. Its API and JSON—whose contract (routes, body, codes, and error keys) was sufficient to write the client without ever reading its code—serves both a browser and a phone equally well. There is only one difference: on the phone, there is no browser to store the token cookie, so the app took on that role with just a few lines of code (<strong><em>[CookieClient]</em></strong>). Security remains unchanged: it is still the server that authenticates users, verifies roles and management rules, and decides what a patient is authorized to view.</p>
 <p>Readers who have taken the <em>[React]</em> course can compare:</p>
 <ul>
   <li>both are based on the same idea: the interface is a <b>function of the state</b>. A <i>[React]</i> component is a function that returns JSX; a <i>[Flutter]</i> widget has a <i><b>[build()]</b></i> method that returns a widget tree. When the state changes (<i><b>[useState] </b></i>/ <i><b>[setState]</b></i>), the interface is rebuilt and then compared to the previous one;
@@ -728,7 +728,7 @@
   </li>
   <li>other widely used state managers: <i>[Riverpod] </i>(the successor to <i>[provider]</i>, by the same author), <i>[Bloc]</i>;
   </li>
-  <li>Code generation: <i>[json_serializable] </i>and <i>[freezed] </i>generate the methods <i><b>[depuisJson]</b></i>, <i><b>[copyWith]</b></i>, <i><b>[==]</b></i>... from simple declarations;
+  <li>Code generation: <i>[json_serializable] </i>and <i>[freezed] </i>generate the methods <i><b>[fromJson]</b></i>, <i><b>[copyWith]</b></i>, <i><b>[==]</b></i>... from simple declarations;
   </li>
   <li>secure token storage (<i>[flutter_secure_storage]</i>), notifications, the camera, geolocation: one package per need, on <a href="https://pub.dev/"><u><span style="color: #0563c1">pub.dev</span></u></a>;
   </li>

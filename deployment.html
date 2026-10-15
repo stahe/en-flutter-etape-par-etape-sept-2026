@@ -799,7 +799,7 @@
 <p>Two warnings, with no consequences: compilation into <em>[WebAssembly]</em> would be possible (see below); a library in <em>[Flutter]</em> references icons from the <em>[iOS]</em> (<em>[CupertinoIcons]</em>) style, which the application does not use.</p>
 <p>The <em>[dart2js]</em> compiler has compiled the entire application (<em>[Dart]</em>, <em>[Flutter]</em>, and the packages) into <em>[JavaScript]</em>, in the <strong><em>[build/web/]</em></strong> folder:</p>
 <ul>
-  <li><i><b>[index.html]</b></i>: LA application page, which loads <i><b>[flutter_bootstrap.js]</b></i>, then <i><b>[main.dart.js] </b></i>(3.5 MB, approximately 1 MB once compressed by the server): NOTRE code, along with all the code from <i>[Flutter] </i>and the packets, optimized. <i>[Flutter] </i>does not generate HTML: the application draws each pixel itself on a canvas, using the same engine as on the phone;
+  <li><i><b>[index.html]</b></i>: THE application page, which loads <i><b>[flutter_bootstrap.js]</b></i>, then <i><b>[main.dart.js] </b></i>(3.5 MB, approximately 1 MB once compressed by the server): OUR code, along with all the code from <i>[Flutter] </i>and the packages, optimized. <i>[Flutter] </i>does not generate HTML: the application draws each pixel itself on a canvas, using the same engine as on the phone;
   </li>
   <li><i><b>[canvaskit/]</b></i>: this rendering engine (<i>[Skia]</i>, compiled into <i>[WebAssembly]</i>: <i><b>[canvaskit.wasm]</b></i>, 7 MB). Without the <i><b>[--no-web-resources-cdn]</b></i> option, it would be downloaded from a <i>[Google]</i> server; with it, it is included with the application, which no longer depends on any external site;
   </li>
@@ -811,19 +811,19 @@
 
 <p>The <strong><em>[--wasm]</em></strong> option compiles the application as <em>[WebAssembly]</em> rather than <em>[JavaScript]</em>: it is faster in browsers that support it (recent versions of <em>[Chrome]</em>, <em>[Edge]</em>, and <em>[Firefox]</em>); other browsers automatically receive the <em>[JavaScript]</em> version.</p>
 <ol>
-<li>Place it on the server. Copy the CONTENU file from the <strong><em>[build/web/]</em></strong> folder to a folder named <strong><em>[client/]</em></strong> at the root of the JSON server (<strong><em>[rdvmedecins-nestjs-json/client/index.html]</em></strong>, <strong><em>[rdvmedecins-nestjs-json/client/main.dart.js]</em></strong>...), then restart the server. It displays:</li>
+<li>Place it on the server. Copy the CONTENTS of the [build/web/] folder to a folder named <strong><em>[client/]</em></strong> at the root of the JSON server (<strong><em>[rdvmedecins-nestjs-json/client/index.html]</em></strong>, <strong><em>[rdvmedecins-nestjs-json/client/main.dart.js]</em></strong>...), then restart the server. It displays:</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>[Nest] LOG [RdvMedecins] client web servi depuis .../rdvmedecins-nestjs-json/client
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>[Nest] LOG [RdvMedecins] serveur JSON démarré : http://localhost:8080/api
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>[Nest] LOG [RdvMedecins] web client served from .../rdvmedecins-nestjs-json/client
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>[Nest] LOG [RdvMedecins] JSON server started: http://localhost:8080/api
 </code></pre></div></td></tr></table></div>
-<p>The complete application is now available at http://localhost:8080. The server serves the client’s files and returns <strong><em>[index.html]</em></strong> for any other address outside of /api: reloading the /agenda page works (it is the client’s browser that displays it). The server’s <em>[src/web/client-spa.ts]</em> file handles this task. The application is served by the API server: the relative address of <em>[config.dart]</em> (<strong><em>[&#x27;&#x27;]</em></strong>, or <strong><em>[/api/...]</em></strong>) is correct.</p>
+<p>The complete application is now available at http://localhost:8080. The server serves the client’s files and returns <strong><em>[index.html]</em></strong> for any other address outside of /api: reloading the /schedule page works (it is the client’s router that displays it). The server’s <em>[src/web/client-spa.ts]</em> file handles this task. The application is served by the API server: the relative address of <em>[config.dart]</em> (<strong><em>[&#x27;&#x27;]</em></strong>, or <strong><em>[/api/...]</em></strong>) is correct.</p>
 <p>You can also try the version built without the JSON server, using any file server, but the /api requests will fail.</p>
 <h2 id="122-the-android-version">12.2. <span style="color: #2e74b5">The Android version</span></h2>
 <ol>
 <li>Build the app, specifying the server address:</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>flutter build apk --dart-define=SERVEUR=http://192.168.1.20:8080
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>flutter build apk --dart-define=SERVER=http://192.168.1.20:8080
 </code></pre></div></td></tr></table></div>
 <p>The console displays (for a APK built without <strong><em>[--dart-define]</em></strong>):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>

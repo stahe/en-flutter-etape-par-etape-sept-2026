@@ -817,30 +817,30 @@
 
 <h1 id="14-appendices">14. <span style="color: #2e74b5">Appendices</span></h1>
 <h2 id="141-installing-flutter">14.1. <span style="color: #2e74b5">Installing Flutter</span></h2>
-<p>The SDK and <em>[Flutter] files</em> can be downloaded from <a href="https://docs.flutter.dev/get-started/install"><u><span style="color: #0563c1">docs.flutter.dev</span></u></a> (select <em>[Windows]</em>, then <em>[Android]</em>). It is a simple compressed folder, which you extract into a folder named SANS (no spaces or accented characters, e.g., <strong><em>[C:\dev\flutter]</em></strong>), then add its subfolder <strong><em>[bin]</em></strong> to the user’s environment variable <em>[Path]</em>. The SDK and <em>[Dart] files</em> are included. Verify the installation in a new console:</p>
+<p>The [Flutter] SDK can be downloaded from <a href="https://docs.flutter.dev/get-started/install"><u><span style="color: #0563c1">docs.flutter.dev</span></u></a> (select <em>[Windows]</em>, then <em>[Android]</em>). It is a simple compressed folder, which you extract into a folder WITHOUT spaces or accented characters (e.g., [C:\dev\flutter]), then add its subfolder <strong><em>[bin]</em></strong> to the user’s environment variable <em>[Path]</em>. The [Dart] SDK is included. Verify the installation in a new console:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>flutter --version
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>flutter doctor
 </code></pre></div></td></tr></table></div>
 <p><em>[flutter doctor]</em> checks everything that <em>[Flutter]</em> requires: SDK, <em>[Android]</em>, and its licenses, <em>[Chrome]</em>, <em>[Visual Studio]</em> (for <em>[Windows]</em> applications), connected devices, and network access. Each line is preceded by a checkmark <em>[√]</em> if everything is okay, an X <em>[X]</em> or an exclamation point <em>[!]</em> otherwise, with instructions on what to do listed below. <strong><em>[flutter doctor -v]</em></strong> provides details (versions, paths).</p>
 <p>The “Visual Studio” line applies only to <em>[Windows]</em> applications (the <strong><em>[windows/]</em></strong> examples folder): it may remain in error if you’re targeting only mobile and web.</p>
-<p>In <em>[Windows]</em>, projects that use native code packages (<em>[shared_preferences]</em>...) require the system’s “developer mode”: <em>[flutter pub get]</em> indicates this (“Building with plugins requires symlink support”). You can enable it in Settings / System / Developer Space (command <strong><em>[start ms-settings:developers]</em></strong>).</p>
+<p>In <em>[Windows]</em>, projects that use native code packages (<em>[shared_preferences]</em>...) require the system’s “developer mode”: <em>[flutter pub get]</em> indicates this (“Building with plugins requires symlink support”). You can enable it in Settings / System / For developers (command <strong><em>[start ms-settings:developers]</em></strong>).</p>
 <h2 id="142-installing-android-studio-and-an-emulator">14.2. <span style="color: #2e74b5">Installing Android Studio and an emulator</span></h2>
-<p><em>[Android Studio]</em> can be downloaded from <a href="https://developer.android.com/studio"><u><span style="color: #0563c1">developer.android.com/studio</span></u></a>. It is not used to write code, but to install the SDK <em>[Android]</em> and create an emulator:</p>
+<p><em>[Android Studio]</em> can be downloaded from <a href="https://developer.android.com/studio"><u><span style="color: #0563c1">developer.android.com/studio</span></u></a>. It is not used to write code, but to install the [Android] SDK and create an emulator:</p>
 <ul>
-  <li>Upon first launch, the wizard installs SDK and <i>[Android]</i>;
+  <li>Upon first launch, the wizard installs the [Android] SDK;
   </li>
   <li>More Actions menu / SDK Manager, SDK Tools tab: check “Android SDK Command-line Tools,” which <i>[Flutter] </i>requires;
   </li>
   <li>in a console: <i><b>[flutter doctor --android-licenses]</b></i>, and accept the licenses;
   </li>
-  <li>More Actions / Virtual Device Manager menu: create a virtual phone (for example, a “Pixel”) using a recent system image. Click the ▶ button to launch it; <i>[flutter devices] </i>will then detect it under the name <i><b>[emulator-5554]</b></i>. You can also launch it without opening <i>[Android Studio]</i>: <i><b>[flutter emulators] </b></i>lists the emulators, and <i><b>[flutter emulators --launch &lt;nom&gt;] </b></i>launches one.
+  <li>More Actions / Virtual Device Manager menu: create a virtual phone (for example, a “Pixel”) using a recent system image. Click the ▶ button to launch it; <i>[flutter devices] </i>will then detect it under the name <i><b>[emulator-5554]</b></i>. You can also launch it without opening <i>[Android Studio]</i>: <i><b>[flutter emulators] </b></i>lists the emulators, and <i><b>[flutter emulators --launch &lt;name&gt;] </b></i>launches one.
   </li>
 </ul>
 
 <p>For a real phone: In Settings / About Phone, tapping “Build Number” seven times brings up “Developer Options,” where you can enable “USB Debugging.” When connected to the computer, the phone will ask you to authorize the computer; <em>[flutter devices]</em> will then detect it.</p>
 <h2 id="143-installing-visual-studio-code">14.3. <span style="color: #2e74b5">Installing Visual Studio Code</span></h2>
-<p><em>[Visual Studio Code]</em> is downloaded to <a href="https://code.visualstudio.com/"><u><span style="color: #0563c1">code.visualstudio.com</span></u></a>. In the Extensions panel (Ctrl-Shift-X), install the <em>[Flutter]</em> extension (from <em>[Dart Code]</em>), which also installs the <em>[Dart]</em> extension. They provide:</p>
+<p><em>[Visual Studio Code]</em> is downloaded from code.visualstudio.com<a href="https://code.visualstudio.com/"></a>. In the Extensions panel (Ctrl-Shift-X), install the <em>[Flutter]</em> extension (from <em>[Dart Code]</em>), which also installs the <em>[Dart]</em> extension. They provide:</p>
 <ul>
   <li>code completion, code validation as you type (using the rules from <i>[analysis_options.yaml]</i>), navigation to the definition of a widget or class, and renaming across the entire project;
   </li>
@@ -854,9 +854,9 @@
   </li>
 </ul>
 
-<p>To run an example using F5, open its file <strong><em>[main.dart]</em></strong> before pressing F5 (or create a file named <strong><em>[.vscode/launch.json]</em></strong>). Open a project via the File / Open Folder menu (the <strong><em>[exemples_flutter]</em></strong> folder, for example), and open a console via the Terminal / New Terminal menu.</p>
+<p>To run an example using F5, open its file <strong><em>[main.dart]</em></strong> before pressing F5 (or create a file named <strong><em>[.vscode/launch.json]</em></strong>). Open a project via the File / Open Folder menu (the <strong><em>[examples_flutter]</em></strong> folder, for example), and open a console via the Terminal / New Terminal menu.</p>
 <h2 id="144-the-flutter-tool-devtools">14.4. <span style="color: #2e74b5">The Flutter tool DevTools</span></h2>
-<p><em>[Flutter DevTools]</em> is included with SDK. While the application is running, <em>[flutter run]</em> displays its address (“The Flutter DevTools debugger and profiler... is available at: http://127.0.0.1:9101... ”); in <em>[VS Code]</em>, the “Flutter: Open DevTools” command opens it in the editor. Its most useful tabs:</p>
+<p><em>[Flutter DevTools]</em> is included with the SDK. While the application is running, <em>[flutter run]</em> displays its address (“The Flutter DevTools debugger and profiler... is available at: http://127.0.0.1:9101... ”); in <em>[VS Code]</em>, the “Flutter: Open DevTools” command opens it in the editor. Its most useful tabs:</p>
 <ul>
   <li>“Flutter Inspector”: the widget tree for the screen, and the properties for each widget. “Select Widget Mode” lets you tap an element on the phone to find its widget in the tree; “Show Guidelines” draws the margins and alignment lines. This is the tool that answers the question, “Why isn’t this widget in the right place?”;
   </li>
@@ -869,7 +869,7 @@
 </ul>
 
 <h2 id="145-installation-of-nodejs">14.5. <span style="color: #2e74b5">Installation of Node.js</span></h2>
-<p><em>[Node.js]</em> downloads to <a href="https://nodejs.org/"><u><span style="color: #0563c1">nodejs.org</span></u></a>: select version LTS (long-term support). The <em>[Windows]</em> installer also installs <em>[npm]</em>. It is only required for the JSON server. Verify the installation in a console:</p>
+<p><em>[Node.js] is downloaded from nodejs.org</em><a href="https://nodejs.org/"></a>: select version LTS (long-term support). The <em>[Windows]</em> installer also installs <em>[npm]</em>. It is only required for the JSON server. Verify the installation in a console:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>node --version
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>npm --version
@@ -890,7 +890,7 @@
 <p><em>[curl]</em> is included with <em>[Windows]</em> versions 10 and 11, <em>[macOS],</em> and most distributions of <em>[Linux]</em>. Check its version:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>curl --version
 </code></pre></div></td></tr></table></div>
-<p>The option <em>[--json]</em>, used in this document, has been available since version 7.82 (2022). If you are using an older version, replace <strong><em>[--json @fichier]</em></strong> with <strong><em>[-H &quot;Content-Type: application/json&quot; -d @fichier]</em></strong>, or install a recent version starting with <a href="https://curl.se/"><u><span style="color: #0563c1">curl.se</span></u></a>.</p>
+<p>The option <em>[--json]</em>, used in this document, has been available since version 7.82 (2022). If you are using an older version, replace <strong><em>[--json @file]</em></strong> with <strong><em>[-H &quot;Content-Type: application/json&quot; -d @file]</em></strong>, or install a recent version from curl.se<a href="https://curl.se/"></a>.</p>
 <p>In <em>[PowerShell]</em>, you must enter <em>[curl.exe]</em>, not <em>[curl]</em>: In <em>[PowerShell]</em>, <em>[curl]</em> is an alias for another command (<em>[Invoke-WebRequest]</em>), which does not include the options from <em>[curl]</em>. The command prompt (<em>[cmd]</em>) does not have this issue.</p>
 
 
