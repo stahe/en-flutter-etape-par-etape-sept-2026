@@ -4,7 +4,7 @@
 
 This course teaches you how to build a **mobile** app using the [Flutter](https://flutter.dev) 3.44 framework and the [Dart](https://dart.dev) 3.12 language: an Android app whose screens are rendered **on the phone** using JSON data from a server. The same code also generates a web app.
 
-It follows the outline of the [Step-by-Step Introduction to the React Framework](https://stahe.github.io/en-react-etape-par-etape-sept-2026/) course (as well as the [Vue.js](https://stahe.github.io/vuejs-etape-par-etape-sept-2026/) and [Angular](https://stahe.github.io/angular-etape-par-etape-sept-2026/) courses): same server, same screens, written in the Flutter style, for a phone.
+It follows the outline of the [Step-by-Step Introduction to the React Framework](https://stahe.github.io/en-react-etape-par-etape-sept-2026/) course (as well as the [Vue.js](https://stahe.github.io/en-vuejs-etape-par-etape-sept-2026/) and [Angular](https://stahe.github.io/en-angular-etape-par-etape-sept-2026/) courses): same server, same screens, written in the Flutter style, for a phone.
 
 | React Course | Flutter Course |
 |---|---|
